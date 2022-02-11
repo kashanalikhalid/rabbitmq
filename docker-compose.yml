@@ -1,0 +1,10 @@
+version: '3'
+services:
+  receive:
+    build:
+      context: .
+      dockerfile: Dockerfile.receive
+    environment:
+      - "RabbitMq/Username=guest"
+      - "RabbitMq/Password=guest"
+      - "ElasticUrl=http://127.0.0.1/"

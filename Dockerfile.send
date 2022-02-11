@@ -1,0 +1,5 @@
+FROM python:alpine
+WORKDIR '/app'
+COPY send.py .
+RUN pip install pika
+CMD ["python", "-u","send.py"]
