@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: send-pod
+  labels:
+    component: send
+spec:
+  containers:
+    - name: send
+      image: kashanalikhalid/rabbitmq-send
+
+
