@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: receive
-      image: kashanalikhalid/rabitmq-receive
+      image: kashanalikhalid/rabbitmq-receive
 
 

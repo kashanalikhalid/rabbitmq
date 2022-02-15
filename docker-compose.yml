@@ -1,5 +1,10 @@
 version: '3'
 services:
+  rabbit:
+    image: 'rabbitmq:management'
+    ports:
+      - "15672:15672"
+
   receive:
     build:
       context: .
@@ -8,3 +13,18 @@ services:
       - "RabbitMq/Username=guest"
       - "RabbitMq/Password=guest"
       - "ElasticUrl=http://127.0.0.1/"
+#    volumes:
+#    - '.:/app'
+    restart: always
+    depends_on:
+      - rabbit
+
+  send:
+    build:
+      context: .
+      dockerfile: Dockerfile.send
+    depends_on:
+      - rabbit
+#    volumes:
+#      - '.:/app'
+    restart: always

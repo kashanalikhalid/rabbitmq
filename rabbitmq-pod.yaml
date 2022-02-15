@@ -17,6 +17,6 @@ spec:
         - name: RABBITMQ_DEFAULT_VHOST
           value: storage-collector-dev
         - name: RABBITMQ_DEFAULT_USER
-          value: dev
+          value: guest
         - name: RABBITMQ_DEFAULT_PASS
-          value: dev
+          value: guest

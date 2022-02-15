@@ -3,14 +3,14 @@ import pika, sys, os
 # port=15672
 def main():
 
-    username = os.environ['RabbitMq/Username']
-    password = os.environ['RabbitMq/Password']
-    host = os.environ['ElasticUrl']
-    print(host)
-    credentials = pika.PlainCredentials('guest', 'guest')
-    parameters = pika.ConnectionParameters(
-        host, port=15672, credentials=credentials, heartbeat=5)
+    # username = os.environ['RabbitMq/Username']
+    # password = os.environ['RabbitMq/Password']
+    # host = os.environ['ElasticUrl']
+    # print(host)
+    # credentials = pika.PlainCredentials('guest', 'guest')
+    parameters = pika.ConnectionParameters(host='10.104.76.240', virtual_host='storage-collector-dev', heartbeat=5)
     connection = pika.BlockingConnection(parameters)
+
     channel = connection.channel()
 
     channel.queue_declare(queue='hello')
